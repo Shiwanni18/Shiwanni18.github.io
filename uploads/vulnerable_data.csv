@@ -1,0 +1,6 @@
+id,name,email,password,user_input,script
+1,John Doe,john.doe@example.com,12345,password'; DROP TABLE users; --
+2,Jane Smith,jane.smith@example.com,password123,"<script>alert('XSS');</script>","<img src='invalid.jpg' onerror='alert("XSS")'>"
+3,Bob Johnson,bob.johnson@example.com,letmein123,"SELECT * FROM users WHERE id=1;","<iframe src='javascript:alert("XSS")'></iframe>"
+4,Alice Davis,alice.davis@example.com,qwerty!,"INSERT INTO users VALUES ('admin', 'admin');","<a href='javascript:alert("XSS")'>Click me</a>"
+5,Charlie Brown,charlie.brown@example.com,supersecure,"admin' OR '1'='1'; --","<div onmouseover='alert("XSS")'>Hover here</div>"
